@@ -1,0 +1,58 @@
+<template name="home">
+    <div class="page-center-content">
+  <h2>
+    Hi. I'm Clerk
+    </h2>
+  <p>
+  I'll store data for you and give you a claim check. 
+  </p>
+  <p>
+    Come back anytime with your claim check to get your data back.
+    </p>
+    <p>
+      Clerk is open-source and available to all.  
+      <br/>The service is free.
+      <br/><a href="https://github.com/rjalili/clerk">GitHub repo</a>
+      </p>
+
+      {{> clerkLatestKey}}
+  {{> clerkDataForm}}
+  {{> clerkFetchedData}}
+  {{> clerkBucketMetaData}}
+  </div>
+</template>
+
+<template name="clerkLatestKey">
+  {{#if clerk_key}}
+  Your latest Key: <button id="clerkKey" class="btn btn-default">{{clerk_key}}</button>
+  {{/if}}
+</template>
+
+<template name="clerkDataForm">
+  <!-- add a form below the h1 -->
+  <form class="dataForm">
+    <div class="form-group">
+      <label for="dataToStore">What would you like to store?</label>
+      <textarea class="form-control" rows="5" id="dataToStore" placeholder="Type json here "></textarea>
+      <input type="submit" value="Store" class="btn btn-default">
+    </div>
+  </form>
+<!--
+    <button type="submit" class="btn btn-default">Submit</button>
+<button>Store</button>
+-->
+</template>
+
+<template name="clerkFetchedData">
+  <div id="clerkFetchedData">
+    <h2>Clerk Fetched Data</h2>
+    {{clerk_fetched_data}}
+  </div>
+</template>
+
+<template name="clerkBucketMetaData">
+  <div id="clerkBucketMetaData">
+    <h2>Meta Data</h2>
+    {{clerk_fetched_metadata}}
+  </div>
+</template>

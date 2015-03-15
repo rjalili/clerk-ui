@@ -1,0 +1,18 @@
+html { 
+  display:table;height:100%;width:100%;  
+}
+
+body {
+  display:table-cell;vertical-align:middle;
+}
+
+.page-center-content {
+  margin:0 auto;width:80%;text-align:center;background:white
+}
+
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
