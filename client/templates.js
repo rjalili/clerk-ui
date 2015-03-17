@@ -32,17 +32,20 @@ Template.clerkDataForm.events({
     var text = event.target.dataToStore.value;
 
     // call API to get token for data
-    var data = JSON.parse(text);
-    var cb = function(error, result) {
-      var key = result;
-      if ( key ) {
-        console.log("callback got key" + key);
-        Session.set("private_clerk_key",key);
-      }
-    };
+    if ( text.length > 0 ) {
+      var data = JSON.parse(text);
+      var cb = function(error, result) {
+        var key = result;
+        if ( key ) {
+          console.log("callback got key" + key);
+          Session.set("private_clerk_key",key);
+        }
+      };
     Clerk.store(data, cb);
     // Clear form
     event.target.dataToStore.value = "";
+      
+    }
 
     // Prevent default form submit
     return false;
