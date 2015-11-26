@@ -41,9 +41,12 @@ Template.clerkDataForm.events({
           Session.set("private_clerk_key",key);
         }
       };
-    Clerk.store(data, cb);
-    // Clear form
-    event.target.dataToStore.value = "";
+      if  ( ! data ) {
+        data = {"data": text};
+      }
+      Clerk.store(data, cb);
+      // Clear form
+      event.target.dataToStore.value = "";
       
     }
 
