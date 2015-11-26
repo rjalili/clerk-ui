@@ -41,9 +41,11 @@ Template.clerkDataForm.events({
           Session.set("private_clerk_key",key);
         }
       };
-      if  ( ! data ) {
+      
+      if  ( typeof data != "object" ) {
         data = {"data": text};
       }
+      
       Clerk.store(data, cb);
       // Clear form
       event.target.dataToStore.value = "";
