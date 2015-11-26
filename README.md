@@ -5,3 +5,5 @@ If valid JSON is entered, that is stored
 Otherwise, {"data": text_entered } is stored as the object
 
 Fetch data, given a key
+
+Deployed to clerk-ui.meteor.com and klerkpad.meteor.com
